@@ -6,10 +6,6 @@ sources:
     schema: landing 
     tables:
       - name: raw_roads
-        external:
-          location: 'abfss://landing@tdatabricksdevstg.dfs.core.windows.net/raw_roads'
-      - name: raw_traffics
-        external:
-          location: 'abfss://landing@tdatabricksdevstg.dfs.core.windows.net/raw_traffic'
+      - name: raw_traffic
 
   
