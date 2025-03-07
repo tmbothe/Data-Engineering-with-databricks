@@ -1,2 +1,2 @@
 SELECT *
-FROM dbt_project_catalog.landing.raw_roads
+FROM {{source('landing','raw_roads')}}
