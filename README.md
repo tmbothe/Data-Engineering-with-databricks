@@ -9,7 +9,7 @@ dbt is not a data  extraction tool, but works with data already loaded into a da
 ## What is this project about?
 
 This is an end to end project, that will help us go over the different aspect of <b>dbt - databricks</b> integration, following a medallion architecture.
-![image](https://raw.githubusercontent.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/dbt_project.jpg)
+![image](https://github.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/dbt_project.jpg)
 
 **Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake**
 
