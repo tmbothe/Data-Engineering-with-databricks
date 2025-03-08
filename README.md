@@ -1,8 +1,15 @@
-# Data-Engineering-with-databricks
+# Data-Engineering-with-databricks and dbt
 
-<a href="https://www.packtpub.com/product/data-engineering-with-databricks-cookbook/9781837633357"><img src="https://content.packt.com/_/image/original/B19798/cover_image_large.jpg" alt="no-image" height="256px" align="right"></a>
+<b>dbt</b> (data build tool) is an open source tool that helps professional analytics engineers automate the application of powerful and proven patterns to transform data from ingestion to delivery, enabling real DataOps. It uses only SQL based transformation.
 
-This is the code repository for [Data Engineering with Databricks Cookbook](https://www.packtpub.com/product/data-engineering-with-databricks-cookbook/9781837633357), published by Packt.
+Databricks Platform offers a variety of languages to perform data engineering tasks. For people working on SQL projects, dbt offers a good alternative to transform data inside their data platform. It provides a framework for writing and organazing SQL queries, version-controlling them, and running then in a consistent, repeatable manner. 
+
+dbt is not a data  extraction tool, but works with data already loaded into a data platform, transforming it into meaninful tables that analysts can use.
+
+## What is this project about?
+
+This is an end to end project, that will help us go over the different aspect of <b>dbt - databricks</b> integration, following a medallion architecture.
+![image](https://raw.githubusercontent.com/tmbothe/Data-Engineering-with-databricks/main/images/dbt_project.jpeg)
 
 **Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake**
 
