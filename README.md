@@ -9,7 +9,34 @@ dbt is not a data  extraction tool, but works with data already loaded into a da
 ## What is this project about?
 
 This is an end to end project, that will help us go over the different aspect of <b>dbt - databricks</b> integration, following a medallion architecture.
+
 ![image](https://github.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/dbt_project.jpg)
+
+As we can see on the image above, the whole pipeline is typical Data engineering project that:
+* Data coming from external sources is loaded into a **landing zone** in  Azure blob storage
+* Then we will read data as is from the landing zone to the **bronze zone** with with a container in Azure
+* After performing transformations and cleaning we will store the clean data into the **Silver zone**
+* We will finally perform some aggrations and store the final data in the **gold zone** ready for reporting.
+* All data and access to the databricks platform will be managed by the Unity catalog.
+
+## Steps to follow
+1- Have or creatre an Azure account. Follow steps ![here](https://learn.microsoft.com/en-us/azure/databricks/scenarios/quickstart-create-databricks-workspace-vnet-injection)
+2- Create a databricks workspace and be admin to perform all tasks
+3- Install and configure dbt cloud. Follow steps ![here](https://docs.databricks.com/aws/en/partners/prep/dbt-cloud)
+
+## Datasets
+
+The dataset we are going to be using is a collections of roads and traffic data that can be find on kaggle. It is basically the count of the number of vehicles that were collected at a given location at a specific time. : these vehicles are:
+* Pedal cycle
+* Two wheeler motor vehicles
+* Buses amd coaches
+* LVG (Large goods vehicle)
+* HGV (Heavy Goods Vehicle)
+* Electric vehicles
+
+Here is the over all structure of the data.
+
+![image](https://github.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/schema.jpg)
 
 **Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake**
 
