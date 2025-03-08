@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: landing
+    database: dbt_project_catalog  
+    schema: landing 
+    tables:
+      - name: raw_roads
+      - name: raw_traffic
+        

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: bonze_roads
+    columns:
+      - name: Road_category
+        tests:
+          - accepted_values:
+              values: ['TM','PA','TA','M','PM']
+
+      - name:  Road_ID
+        tests:
+          - unique
+          - not_null
+  - name: bronze_traffic
+    columns:
+      - name: Record_ID
+        tests:
+          - unique
+          - not_null
