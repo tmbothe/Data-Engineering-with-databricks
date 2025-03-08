@@ -20,9 +20,9 @@ As we can see on the image above, the whole pipeline is typical Data engineering
 * All data and access to the databricks platform will be managed by the Unity catalog.
 
 ## Steps to follow
-1- Have or creatre an Azure account. Follow steps ![here](https://learn.microsoft.com/en-us/azure/databricks/scenarios/quickstart-create-databricks-workspace-vnet-injection)
-2- Create a databricks workspace and be admin to perform all tasks
-3- Install and configure dbt cloud. Follow steps ![here](https://docs.databricks.com/aws/en/partners/prep/dbt-cloud)
+*  Have or creatre an Azure account. Follow steps [click here](https://learn.microsoft.com/en-us/azure/databricks/scenarios/quickstart-create-databricks-workspace-vnet-injection)
+*  Create a databricks workspace and be admin to perform all tasks
+*  Install and configure dbt cloud. Follow steps [click here](https://docs.databricks.com/aws/en/partners/prep/dbt-cloud)
 
 ## Datasets
 
