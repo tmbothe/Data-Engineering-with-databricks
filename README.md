@@ -71,3 +71,58 @@ The code for different layer can be found in the project under **models**, but b
 
 
 ![image](https://github.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/project_structure_in_dbt.jpg)
+
+#### Ensuring data quality with tests
+
+The best way is to make data quality a real thing and not just hope it defines exactly what we expect as input and output and then check that the data adheres to these requirements. This is the essence of being able to define runnable tests on our data. dbt allows two types of tests. Generic tests and singular tests.
+
+**Generic tests**, also called schema tests, are tests that are generic in nature and are therefore codified in a parametrized query, which can be applied to any model or any column in any model by naming them in a YAML configuration file.
+```
+version: 2
+
+models:
+  - name: bonze_roads
+    columns:
+      - name: Road_category
+        tests:
+          - accepted_values:
+              values: ['TM','PA','TA','M','PM']
+
+      - name:  Road_ID
+        tests:
+          - unique
+          - not_null
+  - name: bronze_traffic
+    columns:
+      - name: Record_ID
+        tests:
+          - unique
+          - not_null
+```
+Here is an example of generic test, that checks if columns are unique or not null. The one in the column **Road category** contraints the values of that columns.
+
+**Singular tests** are the most generic form of test, as you can test everything that you can express in SQL. You just need to write a SQL query that returns the rows that do not pass your test, no matter what you would like to test, whether individual calculations, full table matches, or subsets of columns in multiple tables.
+
+```
+SELECT *
+FROM {{ ref("bronze_roads") }}
+WHERE Total_Link_Length_Km<0 
+   or Total_Link_Length_Miles<0
+   or All_Motor_Vehicles <0
+```
+
+in this example we just test that the values of the columns cannot take a negative values.
+
+#### Implementing SCD(slowly changing dimension)
+We can implement SCD type 2 using the concept on snapshots. This can be useful if we want to tract changes overtime, or reduce the transformation time as we will be processing only new incoming rows.
+We want to track the different data coming into the traffic table as it is the one that get updated frequently. The full code can be found in the project under **snapshots** folder.
+
+After bulding all layers, below the the over all lineage in dbt.
+
+![image](https://github.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/full_project_dag.jpg)
+
+Below is the final project snapshot in databricks.
+
+![image](https://github.com/tmbothe/Data-Engineering-with-databricks/blob/main/images/project_snapshot_databricks.jpg)
+
+#### Project deployment
